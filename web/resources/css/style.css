@@ -1,0 +1,122 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 5, 2015, 2:36:28 PM
+    Author     : Frankmer
+*/
+
+body
+{
+	background-color:#F2F1EF;
+	color:#34495e;	
+}
+header
+{
+	width:80%;
+	padding-left:10%;
+	padding-right:10%;
+	padding-top:3%;
+	padding-bottom:3%;
+	background-color:#19B5FE;
+	text-align:center;
+	text-transform:uppercase;
+	font-size:xx-large;
+	box-shadow:1px 1px 0px 1px RGBA(0, 0, 0, 0.25);
+	margin-bottom:1%;
+}
+.link
+{
+	text-decoration:none;
+	color: #E4F1FE;
+}
+.link:hover
+{
+	text-decoration:underline;
+}
+nav
+{
+	background-color:#19B5FE;
+	font-size:x-large;
+	padding:1%;
+}
+nav ul li
+{
+	float:right;
+	padding-left:1%;
+	padding-right:1%;
+}
+section
+{
+	width:80%;
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:2%;
+	margin-bottom:3%;
+	background-color:#E4F1FE;
+	box-shadow:1px 1px 1px 1px RGBA(0,0,0,0.25);
+	overflow:hidden;
+}
+.encabezado
+{
+	font-size:x-large;
+	text-align:center;
+	text-transform: uppercase;
+	background-color:#89C4F4;
+	padding-top:3%;
+	padding-bottom:2%;
+	width:100%;
+}
+.Modulo-gestion-ticket
+{
+	float:left;
+	width:23%;
+	padding:1%;
+	font-size:large;
+	text-transform:uppercase;
+}
+.Modulo-gestion-ticket ul li
+{
+	padding-bottom:4%;
+}
+.dark
+{
+	color:#2c3e50;
+}
+.Contenedor
+{
+	float:left;
+	width:75%;
+	/*margin-top:1%;	
+	margin-bottom: 2%;*/
+}
+.Contenedor .ticket
+{
+	width:100%;
+	text-align:center;
+}
+.Contenedor .ticket th
+{
+	color:#fff;	
+	font-size:large;
+	text-transform:uppercase;
+	background-color:#95A5A6;
+	padding-top:3%;
+	padding-bottom:2%;
+}
+.Contenedor .ticket td
+{
+	border-top: solid;
+	border-right: solid;
+	border-color: #ECF0F1;
+	padding-top:1%;
+	padding-bottom:1%;
+	background-color:#DADFE1;
+	overflow:hidden;
+}
+.Contenedor .ticket td a
+{
+	color: #16a085;
+}
