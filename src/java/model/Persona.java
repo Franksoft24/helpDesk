@@ -14,6 +14,21 @@ public class Persona {
     protected String Nombre;
     protected String Cargo;
     
+    public Persona(){
+        
+    }
+    
+    public Persona(String Nombre, String Cargo){
+        this.Nombre = Nombre;
+        this.Cargo = Cargo;
+    }
+    
+    public Persona(Integer idPersona, String Nombre, String Cargo){
+        this.idPersona = idPersona;
+        this.Nombre = Nombre;
+        this.Cargo = Cargo;
+    }
+    
     public Integer getIdPersona(){
         return idPersona;
     }

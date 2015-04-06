@@ -68,6 +68,7 @@ section
 	padding-top:3%;
 	padding-bottom:2%;
 	width:100%;
+        color: #fff;
 }
 .Modulo-gestion-ticket
 {
@@ -97,6 +98,11 @@ section
 	width:100%;
 	text-align:center;
 }
+.Contenedor p
+{
+    text-align: justify;
+    margin-right: 1%;
+}
 .Contenedor .ticket th
 {
 	color:#fff;	
@@ -119,4 +125,17 @@ section
 .Contenedor .ticket td a
 {
 	color: #16a085;
+}
+input, textarea, option
+{
+    padding: 5%;
+    width:87%;
+}
+select
+{
+    width: 97%;
+}
+.button
+{
+    width:50%;
 }

@@ -14,8 +14,8 @@ import java.sql.SQLException;
  */
 public class ConexionDB {
     //private static ConexionDB con = new ConexionDB();
-    private static final String JDBC_DRIVER = "com.mariadb.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mariadb://localhost:3306/amigos";
+    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/helpdesk";
     private static final String USER = "root";
     private static final String PASS = "root";
     

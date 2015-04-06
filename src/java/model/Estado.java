@@ -13,6 +13,19 @@ public class Estado {
     private Integer idEstado;
     protected String Descripcion;
     
+    public Estado(){
+        
+    }
+    
+    public Estado (String Descripcion){
+        this.Descripcion = Descripcion;
+    }
+    
+    public Estado (Integer idEstado, String Descripcion){
+        this.idEstado = idEstado;
+        this.Descripcion = Descripcion;
+    }
+    
     public Integer getIdEstado(){
         return idEstado;
     }

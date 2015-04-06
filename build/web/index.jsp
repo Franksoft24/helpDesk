@@ -4,6 +4,14 @@
     Author     : Frankmer
 --%>
 
+<%@page import="DAO.TicketDAO"%>
+<%@page import="DAO.EstadoDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="model.Estado"%>
+<%@page import="model.Ticket"%>
+<%
+    List<Ticket> tickets = TicketDAO.listarTickets();
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,9 +25,9 @@
             <div class="encabezado">Mis Tickets</div>
             <div class="Modulo-gestion-ticket">
                     <ul>
-                    <li><a href="#" class="link dark">Crear Ticket</a></li>
+                    <li><a href="Ticket/" class="link dark">Crear Ticket</a></li>
                     <li><a href="#" class="link dark">Buscar mis ticket</a></li>
-                    <li><a href="#" class="link dark">Ayuda</a></li>
+                    <li><a href="Ticket/help.html" class="link dark">Ayuda</a></li>
                 </ul>
             </div>
             <div class="Contenedor">
@@ -31,6 +39,19 @@
                         <th>Descripción</th>
                         <th></th>
                     </tr>
+                        <%
+                            for(Ticket ticket : tickets){
+                                out.print("<tr>");
+                                out.print("<td>"+ ticket.getTitulo() +"</td>");
+                                out.print("<td>"+ ticket.getFechaCreacion() +"</td>");
+                                out.print("<td>"+ ticket.getEstado() +"</td>");
+                                out.print("<td>"+ ticket.getDescripcion() +"</td>");
+                                out.print("<td><a class=\"link\" href=\"#\">Detalles</a>");
+                                out.print("<a class=\"link\" href=\"#\">Comentar</a>");
+                                out.print("<a class=\"link\" href=\"#\">Editar</a></td>");
+                                out.print("</tr>");
+                            }
+                        %>
                 </table>
             </div>
         </section>

@@ -19,7 +19,30 @@ public class Ticket {
     protected Date FechaCreacion;
     public Integer Estado;
     public Integer Empleado;
-    public Integer Soporte; 
+    public Integer Soporte;
+    
+    public Ticket(){
+        
+    }
+    
+    public Ticket(String Titulo, String Descripcion, Date FechaCreacion, Integer Estado, Integer Empleado, Integer Soporte){
+        this.Titulo = Titulo;
+        this.Descripcion = Descripcion;
+        this.FechaCreacion = FechaCreacion;
+        this.Estado = Estado;
+        this.Empleado = Empleado;
+        this.Soporte = Soporte;
+    }
+    
+    public Ticket(Integer idTicket, String Titulo, String Descripcion, Date FechaCreacion, Integer Estado, Integer Empleado, Integer Soporte){
+        this.idTicket = idTicket;
+        this.Titulo = Titulo;
+        this.Descripcion = Descripcion;
+        this.FechaCreacion = FechaCreacion;
+        this.Estado = Estado;
+        this.Empleado = Empleado;
+        this.Soporte = Soporte;
+    }
     
     public Integer getIdTicket(){
         return idTicket;
