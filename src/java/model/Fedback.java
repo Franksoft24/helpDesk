@@ -13,19 +13,28 @@ public class Fedback {
     private Integer idFedback;
     protected String Comentario;
     public Integer Ticket;
+    public Integer Empleado;
     
     public Fedback(){
         
     }
     
-    public Fedback(String Comentario, Integer Ticket){
+    public Fedback(String Comentario, Integer Ticket, Integer Empleado){
         this.Comentario = Comentario;
         this.Ticket = Ticket;
+        this.Empleado = Empleado;
     }
     
     public Fedback(Integer idFedback, String Comentario){
         this.idFedback = idFedback;
         this.Comentario = Comentario;
+    }
+    
+    public Fedback(Integer idFedback, String Comentario, Integer Ticket, Integer Empleado){
+        this.idFedback = idFedback;
+        this.Comentario = Comentario;
+        this.Ticket = Ticket;
+        this.Empleado = Empleado;
     }
     
     public Integer getIdFedback(){
@@ -46,6 +55,11 @@ public class Fedback {
     public void setTicket(Integer Ticket){
         this.Ticket = Ticket;
     }
-    
+    public Integer getEmpleado(){
+        return Empleado;
+    }
+    public void setEmpleado(Integer Empleado){
+        this.Empleado = Empleado;
+    }
     
 }

@@ -27,10 +27,10 @@
                     <table class="ticket">
                         <tr>
                             <th>Buscar por ID: </th>
-                            <td><input type="text" name="ID" /></td>
+                            <td><input type="text" name="ID" required /></td>
                         </tr>
                         <tr>
-                            <th></th><td><input type="submit" class="button"/></td>
+                            <th></th><td><input type="submit" class="button" value="Buscar"/></td>
                         </tr>
                     </table>
                 </form>

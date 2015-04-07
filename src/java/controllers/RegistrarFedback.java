@@ -34,8 +34,9 @@ public class RegistrarFedback extends HttpServlet {
             throws ServletException, IOException {
         String Comentario = request.getParameter("Comentario");
         int Ticket = Integer.parseInt(request.getParameter("Ticket"));
+        int Empleado = Integer.parseInt(request.getParameter("Empleado"));
         
-        Fedback fedback = new Fedback(Comentario, Ticket);
+        Fedback fedback = new Fedback(Comentario, Ticket, Empleado);
         FedbackDAO.agregarComentario(fedback);
         response.sendRedirect("/helpDesk/Ticket/Detalles?ID="+Ticket);
         

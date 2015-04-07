@@ -50,7 +50,7 @@
                                 }
                                 out.print("<td>"+ ticket.getDescripcion() +"</td>");
                                 out.print("<td><a class=\"link\" href=\"Ticket/Detalles?ID="+ ticket.getIdTicket() +"\"> Detalles </a>");
-                                out.print("<a class=\"link\" href=\"#\"> Comentar </a>");
+                                out.print("<a class=\"link\" href=\"Ticket/Comentar?ID="+ ticket.getIdTicket() +"\"> Comentar </a>");
                                 out.print("<a class=\"link\" href=\"Ticket/Editar?ID="+ ticket.getIdTicket() +"\"> Editar </a></td>");
                                 out.print("</tr>");
                             }

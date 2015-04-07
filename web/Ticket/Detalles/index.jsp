@@ -78,6 +78,20 @@
                         <td><h3>Empleado: </h3> <%out.print(empleado_);%></td>
                         <td><h3>Soporte: </h3> <%out.print(soporte_);%></td>
                     </tr>
+                    <tr>
+                        <th colspan="2">Comentarios:</th>
+                    </tr>
+                    <%
+                        for (Ticket ticket: tickets){
+                           List<Fedback> comentarios = FedbackDAO.buscarComentarios(ticketId);
+                           for(Fedback comentario : comentarios){
+                                List<Persona> empleados = PersonaDAO.buscarPersonas(comentario.getEmpleado());
+                                for (Persona empleado : empleados){
+                                    out.print("<tr><td colspan=\"2\"><h3>"+ empleado.getNombre()+": </h3>"+ comentario.getComentario() +" <a href=\"../EditarComentario/?ID="+ comentario.getIdFedback() +"\" class=\"link\">Editar</a></td></tr>");
+                                }
+                           }
+                        }
+                    %>
                 </table>
             </div>
         </section>

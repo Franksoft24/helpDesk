@@ -107,7 +107,7 @@
                         </tr>
                         <tr>
                             <th></th>
-                            <td><input type="reset" value="Cancelar" class="button"/><input type="submit" value="Actualizar" class="button"/></td>
+                            <td><input type="submit" value="Actualizar" class="button"/></td>
                         </tr>
                 </table></form>
             </div>
