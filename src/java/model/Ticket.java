@@ -34,6 +34,12 @@ public class Ticket {
         this.Soporte = Soporte;
     }
     
+    public Ticket(Integer idTicket, Integer Estado, Integer Soporte){
+        this.idTicket = idTicket;
+        this.Estado = Estado;
+        this.Soporte = Soporte;
+    }
+    
     public Ticket(Integer idTicket, String Titulo, String Descripcion, Date FechaCreacion, Integer Estado, Integer Empleado, Integer Soporte){
         this.idTicket = idTicket;
         this.Titulo = Titulo;

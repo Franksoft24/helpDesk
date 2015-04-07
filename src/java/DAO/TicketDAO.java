@@ -17,7 +17,7 @@ import java.util.List;
  * @author Frankmer
  */
 public class TicketDAO {
-    public static void agregarAmigo(Ticket ticket) {
+    public static void agregarTicket(Ticket ticket) {
         Connection con = ConexionDB.getConnectionDB();
         String query = "INSERT INTO helpdesk.ticket(Titulo,Descripcion,Empleado,Soporte,idEstado,FechaCreacion) values(?,?,?,?,?,?)";
         try {
@@ -28,6 +28,21 @@ public class TicketDAO {
             ps.setInt(4, ticket.getSoporte());
             ps.setInt(5, ticket.getEstado());
             ps.setDate(6,ticket.getFechaCreacion() != null ? new java.sql.Date(ticket.getFechaCreacion().getTime()) : null);
+            ps.executeUpdate();
+            ps.close();
+            con.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    public static void actualizarTicket(Ticket ticket) {
+        Connection con = ConexionDB.getConnectionDB();
+        String query = "Update helpdesk.ticket SET idEstado = ?, Soporte = ? WHERE idTicket = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, ticket.getEstado());
+            ps.setInt(2, ticket.getSoporte());
+            ps.setInt(3, ticket.getIdTicket());
             ps.executeUpdate();
             ps.close();
             con.close();

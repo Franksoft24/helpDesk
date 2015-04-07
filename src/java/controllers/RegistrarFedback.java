@@ -5,12 +5,9 @@
  */
 package controllers;
 
-import model.Ticket;
-import DAO.TicketDAO;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import DAO.FedbackDAO;
+import model.Fedback;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Frankmer
  */
-@WebServlet(name = "RegistrarTicket", urlPatterns = {"/RegistrarTicket"})
-public class RegistrarTicket extends HttpServlet {
+@WebServlet(name = "RegistrarFedback", urlPatterns = {"/RegistrarFedback"})
+public class RegistrarFedback extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,21 +32,13 @@ public class RegistrarTicket extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String Titulo = request.getParameter("Titulo");
-        String Descripcion = request.getParameter("Descripcion");
-        int Estado = 1;//Integer.parseInt(request.getParameter("Estado"));
-        int Empleado = Integer.parseInt(request.getParameter("Empleado"));
-        int Soporte = 1;//Integer.parseInt(request.getParameter("Soporte"));
-        Date FechaCreacion = null;
+        String Comentario = request.getParameter("Comentario");
+        int Ticket = Integer.parseInt(request.getParameter("Ticket"));
         
-        try{
-            FechaCreacion = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("FechaCreacion"));
-        }catch (ParseException ex){
-            ex.printStackTrace();
-        }
-        Ticket ticket= new Ticket(Titulo, Descripcion, FechaCreacion, Estado, Empleado, Soporte);
-        TicketDAO.agregarTicket(ticket);
-        response.sendRedirect("/helpDesk/");
+        Fedback fedback = new Fedback(Comentario, Ticket);
+        FedbackDAO.agregarComentario(fedback);
+        response.sendRedirect("/helpDesk/Ticket/Detalles?ID="+Ticket);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

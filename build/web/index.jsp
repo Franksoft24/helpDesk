@@ -26,7 +26,7 @@
             <div class="Modulo-gestion-ticket">
                 <ul>
                     <li><a href="Ticket/" class="link dark">Crear Ticket</a></li>
-                    <li><a href="#" class="link dark">Buscar mis ticket</a></li>
+                    <li><a href="Ticket/Buscar/" class="link dark">Buscar mis ticket</a></li>
                     <li><a href="Ticket/help.html" class="link dark">Ayuda</a></li>
                 </ul>
             </div>
@@ -51,7 +51,7 @@
                                 out.print("<td>"+ ticket.getDescripcion() +"</td>");
                                 out.print("<td><a class=\"link\" href=\"Ticket/Detalles?ID="+ ticket.getIdTicket() +"\"> Detalles </a>");
                                 out.print("<a class=\"link\" href=\"#\"> Comentar </a>");
-                                out.print("<a class=\"link\" href=\"#\"> Editar </a></td>");
+                                out.print("<a class=\"link\" href=\"Ticket/Editar?ID="+ ticket.getIdTicket() +"\"> Editar </a></td>");
                                 out.print("</tr>");
                             }
                         %>

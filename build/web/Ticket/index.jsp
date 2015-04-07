@@ -26,8 +26,8 @@
             <div class="encabezado"><a href=".." class="link">Mis Tickets</a></div>
             <div class="Modulo-gestion-ticket">
                     <ul>
-                    <li><a href="#" class="link dark">Crear Ticket</a></li>
-                    <li><a href="" class="link dark">Buscar mis ticket</a></li>
+                    <li><a href="" class="link dark">Crear Ticket</a></li>
+                    <li><a href="Buscar/" class="link dark">Buscar mis ticket</a></li>
                     <li><a href="help.html" class="link dark">Ayuda</a></li>
                 </ul>
             </div>
@@ -43,7 +43,7 @@
                         </tr>
                         <tr style="display:none;">
                             <th>Fecha Creacion:</th>
-                            <td><input type="date" name="FechaCreacion" id="FechaCreacion"/></td>
+                            <td><input type="text" name="FechaCreacion" id="FechaCreacion"/></td>
                         </tr>
                         <tr>
                             <th>Estado:</th>

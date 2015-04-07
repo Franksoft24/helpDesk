@@ -53,8 +53,8 @@
             <div class="Modulo-gestion-ticket">
                     <ul>
                     <li><a href="../../Ticket/" class="link dark">Crear Ticket</a></li>
-                    <li><a href="" class="link dark">Buscar mis ticket</a></li>
-                    <li><a href="../../Ticket/help.html" class="link dark">Ayuda</a></li>
+                    <li><a href="../Buscar" class="link dark">Buscar mis ticket</a></li>
+                    <li><a href="../help.html" class="link dark">Ayuda</a></li>
                 </ul>
             </div>
             <div class="Contenedor">
