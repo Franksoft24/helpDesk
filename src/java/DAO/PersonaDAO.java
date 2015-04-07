@@ -37,4 +37,26 @@ public class PersonaDAO {
         }
         return personas;
     }
+    
+    public static List<Persona> buscarPersonas(int id){
+        List<Persona> personas = new ArrayList<Persona>();
+        Connection con = ConexionDB.getConnectionDB();
+        String query = "SELECT * FROM helpdesk.persona WHERE idPersona = " + id;
+        try {
+            ResultSet rs = con.prepareStatement(query).executeQuery();
+            while(rs.next()){
+                Persona persona = new Persona();
+                persona.setIdPersona(rs.getInt("idPersona"));
+                persona.setNombre(rs.getString("Nombre"));
+                
+                personas.add(persona);
+            }
+            rs.close();
+            con.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return personas;
+    }
+    
 }

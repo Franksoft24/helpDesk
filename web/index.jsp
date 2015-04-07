@@ -24,7 +24,7 @@
         <section>
             <div class="encabezado">Mis Tickets</div>
             <div class="Modulo-gestion-ticket">
-                    <ul>
+                <ul>
                     <li><a href="Ticket/" class="link dark">Crear Ticket</a></li>
                     <li><a href="#" class="link dark">Buscar mis ticket</a></li>
                     <li><a href="Ticket/help.html" class="link dark">Ayuda</a></li>
@@ -44,11 +44,14 @@
                                 out.print("<tr>");
                                 out.print("<td>"+ ticket.getTitulo() +"</td>");
                                 out.print("<td>"+ ticket.getFechaCreacion() +"</td>");
-                                out.print("<td>"+ ticket.getEstado() +"</td>");
+                                List<Estado> estados = EstadoDAO.buscarEstados(ticket.getEstado());
+                                for(Estado estado : estados){
+                                    out.print("<td>"+ estado.getDescripcion() +"</td>");
+                                }
                                 out.print("<td>"+ ticket.getDescripcion() +"</td>");
-                                out.print("<td><a class=\"link\" href=\"#\">Detalles</a>");
-                                out.print("<a class=\"link\" href=\"#\">Comentar</a>");
-                                out.print("<a class=\"link\" href=\"#\">Editar</a></td>");
+                                out.print("<td><a class=\"link\" href=\"Ticket/Detalles?ID="+ ticket.getIdTicket() +"\"> Detalles </a>");
+                                out.print("<a class=\"link\" href=\"#\"> Comentar </a>");
+                                out.print("<a class=\"link\" href=\"#\"> Editar </a></td>");
                                 out.print("</tr>");
                             }
                         %>

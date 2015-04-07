@@ -38,7 +38,32 @@ public class TicketDAO {
     public static List<Ticket> listarTickets(){
         List<Ticket> tickets = new ArrayList<Ticket>();
         Connection con = ConexionDB.getConnectionDB();
-        String query = "SELECT * FROM helpdesk.ticket";
+        String query = "SELECT * FROM helpdesk.ticket ORDER BY idTicket DESC";
+        try {
+            ResultSet rs = con.prepareStatement(query).executeQuery();
+            while(rs.next()){
+                Ticket ticket = new Ticket();
+                ticket.setIdTicket(rs.getInt("idTicket"));
+                ticket.setTitulo(rs.getString("Titulo"));
+                ticket.setDescripcion(rs.getString("Descripcion"));
+                ticket.setFechaCreacion(rs.getDate("FechaCreacion"));
+                ticket.setEstado(rs.getInt("idEstado"));
+                ticket.setEmpleado(rs.getInt("Empleado"));
+                ticket.setSoporte(rs.getInt("Soporte"));
+                
+                tickets.add(ticket);
+            }
+            rs.close();
+            con.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return tickets;
+    }
+    public static List<Ticket> buscarTickets(int Id){
+        List<Ticket> tickets = new ArrayList<Ticket>();
+        Connection con = ConexionDB.getConnectionDB();
+        String query = "SELECT * FROM helpdesk.ticket where idTicket = " + Id;
         try {
             ResultSet rs = con.prepareStatement(query).executeQuery();
             while(rs.next()){

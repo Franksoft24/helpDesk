@@ -8,7 +8,6 @@ package controllers;
 import model.Ticket;
 import DAO.TicketDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,12 +35,14 @@ public class RegistrarTicket extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("Ejecutando el servlet.");
         String Titulo = request.getParameter("Titulo");
         String Descripcion = request.getParameter("Descripcion");
         int Estado = 1;//Integer.parseInt(request.getParameter("Estado"));
         int Empleado = Integer.parseInt(request.getParameter("Empleado"));
         int Soporte = 1;//Integer.parseInt(request.getParameter("Soporte"));
         Date FechaCreacion = null;
+        
         try{
             FechaCreacion = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("FechaCreacion"));
         }catch (ParseException ex){

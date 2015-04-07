@@ -36,4 +36,24 @@ public class EstadoDAO {
         }
         return estados;
     }
+    public static List<Estado> buscarEstados(int id){
+        List<Estado> estados = new ArrayList<Estado>();
+        Connection con = ConexionDB.getConnectionDB();
+        String query = "SELECT * FROM helpdesk.estado WHERE idEstado = " + id;
+        try {
+            ResultSet rs = con.prepareStatement(query).executeQuery();
+            while(rs.next()){
+                Estado estado = new Estado();
+                estado.setIdEstado(rs.getInt("idEstado"));
+                estado.setDescripcion(rs.getString("Descripcion"));
+                
+                estados.add(estado);
+            }
+            rs.close();
+            con.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return estados;
+    }
 }
