@@ -18,6 +18,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My cool help desk</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/reset.css"/>
         <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
     </head>
     <body>
@@ -25,9 +26,9 @@
             <div class="encabezado">Mis Tickets</div>
             <div class="Modulo-gestion-ticket">
                 <ul>
-                    <li><a href="Ticket/" class="link dark">Crear Ticket</a></li>
-                    <li><a href="Ticket/Buscar/" class="link dark">Buscar mis ticket</a></li>
-                    <li><a href="Ticket/help.html" class="link dark">Ayuda</a></li>
+                    <a href="Ticket/" class="link dark"><li>Crear Ticket</li></a>
+                    <a href="Ticket/Buscar/" class="link dark"><li>Buscar mis ticket</li></a>
+                    <a href="Ticket/help.html" class="link dark"><li>Ayuda</li></a>
                 </ul>
             </div>
             <div class="Contenedor">

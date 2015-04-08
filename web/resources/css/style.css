@@ -73,14 +73,26 @@ section
 .Modulo-gestion-ticket
 {
 	float:left;
-	width:23%;
-	padding:1%;
+	width:25%;
+	/*padding:1%;*/
 	font-size:large;
 	text-transform:uppercase;
 }
 .Modulo-gestion-ticket ul li
 {
 	padding-bottom:4%;
+	padding-left: 4%;
+	padding-top: 4%;
+}
+.Modulo-gestion-ticket ul a:hover 
+{
+	text-decoration: none;
+}
+.Modulo-gestion-ticket ul a li:hover
+{
+	background-color: #C5EFF7;
+	text-decoration: none;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.25);
 }
 .dark
 {
@@ -102,21 +114,26 @@ section
 {
     text-align: justify;
     margin-right: 1%;
+    margin-left: 1%;
 }
 .Contenedor .ticket th
 {
 	color:#fff;	
 	font-size:large;
+        font-weight: bold;
 	text-transform:uppercase;
 	background-color:#95A5A6;
 	padding-top:3%;
 	padding-bottom:2%;
+        border-top: solid;
+	border-left: solid;
+	border-color:#95A5A6;/* #ECF0F1;*/
 }
 .Contenedor .ticket td
 {
 	border-top: solid;
-	border-right: solid;
-	border-color: #ECF0F1;
+	border-left: solid;
+	border-color:#95A5A6;/* #ECF0F1;*/
 	padding-top:1%;
 	padding-bottom:1%;
 	background-color:#DADFE1;
@@ -135,7 +152,37 @@ select
 {
     width: 97%;
 }
-.button
+.aceptar
 {
-    width:50%;
+	background-color:#27ae60;
+	border-color:#2ecc71;
+	padding:1.5%;
+	text-transform:uppercase;
+	color:#fff;/*#2ecc71;*/
+	text-shadow:1px 1px 0px #fff, -1px -1px 0px #000;
+	font-size:24px;
+	border-radius:0px;
+	margin:0px;
+	width:45%
+}
+.aceptar:hover
+{
+	background-color:rgba(39,174,96,0.78)
+}
+.cancelar
+{
+	background-color:#c0392b;
+	border-color:#e74c3c;
+	padding:1.5%;
+	text-transform:uppercase;
+	color:#fff;/*#e74c3c;*/
+	text-shadow:1px 1px 0px #fff, -1px -1px 0px #000;
+	font-size:24px;
+	border-radius:0px;
+	margin:0px;
+	width:45%
+}
+.cancelar:hover
+{
+	background-color:rgba(192,57,43,0.78)
 }

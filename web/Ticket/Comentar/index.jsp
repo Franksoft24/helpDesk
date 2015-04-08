@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Comentar Ticket</title>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/reset.css"/>
         <link rel="stylesheet" type="text/css" href="../../resources/css/style.css"/>
     </head>
     <body>
@@ -22,9 +23,9 @@
             <div class="encabezado"><a href="../.." class="link">Mis Tickets</a></div>
             <div class="Modulo-gestion-ticket">
                 <ul>
-                    <li><a href="../" class="link dark">Crear Ticket</a></li>
-                    <li><a href="../Buscar/" class="link dark">Buscar mis ticket</a></li>
-                    <li><a href="../help.html" class="link dark">Ayuda</a></li>
+                    <a href="../" class="link dark"><li>Crear Ticket</li></a>
+                    <a href="../Buscar/" class="link dark"><li>Buscar mis ticket</li></a>
+                    <a href="../help.html" class="link dark"><li>Ayuda</li></a>
                 </ul>
             </div>
             <div class="Contenedor">
@@ -50,7 +51,7 @@
                             </select></td>
                         </tr>
                         <tr>
-                            <th></th><td><input type="submit" class="button" value="Comentar"/></td>
+                            <th></th><td><input type="submit" class="button aceptar" value="Comentar"/></td>
                         </tr>
                     </table>
                 </form>

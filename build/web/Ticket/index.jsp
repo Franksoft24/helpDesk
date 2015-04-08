@@ -19,6 +19,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registrar Ticket</title>
+        <link rel="stylesheet" type="text/css" href="../resources/css/reset.css"/>
         <link rel="stylesheet" type="text/css" href="../resources/css/style.css"/>
     </head>
     <body>
@@ -26,9 +27,9 @@
             <div class="encabezado"><a href=".." class="link">Mis Tickets</a></div>
             <div class="Modulo-gestion-ticket">
                     <ul>
-                    <li><a href="" class="link dark">Crear Ticket</a></li>
-                    <li><a href="Buscar/" class="link dark">Buscar mis ticket</a></li>
-                    <li><a href="help.html" class="link dark">Ayuda</a></li>
+                    <a href="" class="link dark"><li>Crear Ticket</li></a>
+                    <a href="Buscar/" class="link dark"><li>Buscar mis ticket</li></a>
+                    <a href="help.html" class="link dark"><li>Ayuda</li></a>
                 </ul>
             </div>
             <div class="Contenedor">
@@ -77,7 +78,7 @@
                         </tr>
                         <tr>
                             <th></th>
-                            <td><input type="reset" value="Cancelar" class="button"/><input type="submit" value="Registrar" class="button"/></td>
+                            <td><input type="reset" value="Cancelar" class="button cancelar"/><input type="submit" value="Registrar" class="button aceptar"/></td>
                         </tr>
                 </table></form>
             </div>
