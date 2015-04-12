@@ -143,7 +143,7 @@ section
 {
 	color: #16a085;
 }
-input, textarea, option
+input, textarea
 {
     padding: 5%;
     width:87%;
@@ -151,6 +151,8 @@ input, textarea, option
 select
 {
     width: 97%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .aceptar
 {

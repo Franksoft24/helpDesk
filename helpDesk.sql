@@ -3,6 +3,7 @@
 -- Server version:               10.0.17-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
 -- HeidiSQL Version:             9.1.0.4867
+-- Author:						 Franksoft
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -45,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `fedback` (
   KEY `FKEmpleado_idEmpleado` (`Empleado`),
   CONSTRAINT `FKEmpleado_idEmpleado` FOREIGN KEY (`Empleado`) REFERENCES `persona` (`idPersona`),
   CONSTRAINT `FKTicket_idTicket` FOREIGN KEY (`Ticket`) REFERENCES `ticket` (`idTicket`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- Dumping structure for table helpdesk.persona
 DROP TABLE IF EXISTS `persona`;
@@ -93,6 +94,24 @@ INSERT INTO `ticket` (`idTicket`, `Titulo`, `Descripcion`, `Empleado`, `Soporte`
 	(3, 'Monitor roto', 'la pantalla de mi monitor esta cuarteada', 2, 1, 1, '2015-04-06'),
 	(4, 'Google chrome no registra los ticket', 'En mi navegador de google chrome no se me permite registrar los ticket que creo. Favor resolver lo antes posible.', 2, 1, 3, '2015-04-06');
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
+
+-- Dumping structure for table helpdesk.ticket
+DROP TABLE IF EXISTS `tracking`;
+CREATE TABLE `tracking` (
+	`idTracking` INT NOT NULL AUTO_INCREMENT,
+	`Persona` INT NOT NULL,
+	`EstadoAnterior` INT NULL,
+	`EstadoActual` INT NOT NULL,
+	`Fecha` DATE NOT NULL,
+	`Ticket` INT NOT NULL,
+	PRIMARY KEY (`idTracking`),
+	CONSTRAINT `FK__persona` FOREIGN KEY (`Persona`) REFERENCES `persona` (`idPersona`),
+	CONSTRAINT `FK__estado` FOREIGN KEY (`EstadoAnterior`) REFERENCES `estado` (`idEstado`),
+	CONSTRAINT `FK__estado_2` FOREIGN KEY (`EstadoActual`) REFERENCES `estado` (`idEstado`),
+	CONSTRAINT `FK__ticket` FOREIGN KEY (`Ticket`) REFERENCES `ticket` (`idTicket`)
+)
+COLLATE='utf8_spanish_ci'
+ENGINE=InnoDB;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -59,6 +59,7 @@
             <div class="encabezado"><a href="../.." class="link">Mis Tickets</a></div>
             <div class="Modulo-gestion-ticket">
                 <ul>
+                    <a href="../.." class="link dark"><li>Ver tickets</li></a>
                     <a href="../" class="link dark"><li>Crear Ticket</li></a>
                     <a href="../Buscar/" class="link dark"><li>Buscar mis ticket</li></a>
                     <a href="../help.html" class="link dark"><li>Ayuda</li></a>
@@ -84,13 +85,19 @@
                         </tr>
                         <tr>
                             <th>Estado:</th>
-                            <td><select name="Estado" id="Estado" required>
+                            <td>
                                 <%
-                                    for (Estado estado : Estados) {
-                                        out.print("<option value='" + estado.getIdEstado() +"'>" + estado.getDescripcion() + "</option>");
+                                    if(EstadoId == 3){
+                                        out.print("<input type=\"text\" name=\"estado\" value=\""+ estado_ +"\" disabled=\"true\"/>");
+                                    }else{
+                                        out.print("<select name=\"Estado\" id=\"Estado\" required>");
+                                        for (Estado estado : Estados) {
+                                            out.print("<option value='" + estado.getIdEstado() +"'>" + estado.getDescripcion() + "</option>");
+                                        }
+                                        out.print("</select>");
                                     }
                                 %>
-                            </select></td>
+                            </td>
                         </tr>
                         <tr>
                             <th>Empleado:</th>
@@ -98,17 +105,31 @@
                         </tr>
                         <tr>
                             <th>Soporte:</th>
-                            <td><select name="Soporte" id="Soporte" required>
+                            <td>
                                 <%
-                                    for (Persona persona : personas) {
-                                        out.print("<option value='" + persona.getIdPersona() +"'>" + persona.getNombre() + "</option>");
+                                    if(EstadoId == 3){
+                                        out.print("<input type=\"text\" name=\"estado\" value=\""+ soporte_ +"\" disabled=\"true\"/>");
+                                    }else{
+                                        out.print("<select name=\"Soporte\" id=\"Soporte\" required>");
+                                        for (Persona persona : personas) {
+                                            out.print("<option value='" + persona.getIdPersona() +"'>" + persona.getNombre() + "</option>");
+                                        }
+                                        out.print("</select>");
                                     }
                                 %>
-                            </select></td>
+                            </td>
                         </tr>
                         <tr>
                             <th></th>
-                            <td><input type="submit" value="Actualizar" class="button aceptar"/></td>
+                            <td>
+                                <%
+                                    if (EstadoId == 3){
+                                        
+                                    }else{
+                                        out.print("<input type=\"submit\" value=\"Actualizar\" class=\"button aceptar\"/>");
+                                    }
+                                %>
+                            </td>
                         </tr>
                 </table></form>
             </div>
